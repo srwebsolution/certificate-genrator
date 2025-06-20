@@ -1,103 +1,81 @@
-import Image from "next/image";
+// src/app/page.tsx (relevant parts)
+
+'use client';
+
+import { useState } from 'react';
+import CertificateDisplay from './component/CertificateDisplay';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Adjusted default values for better context with the new image
+  const [name, setName] = useState('Jonathon Deo');
+  const [courseName, setCourseName] = useState('Outstanding Achievement in Web Development'); // Example course
+  const [collegeName, setCollegeName] = useState('MY COLLEGE NAME'); // New Brand Name
+  const [eventName, setEventName] = useState('the Annual Innovation Summit 2024'); // Fits into body text
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', backgroundColor: '#f0f0f0', padding: '20px' }}>
+      <h1 style={{ color: '#333' }}>Certificate Generator</h1>
+
+      {/* Input Fields Section (no major changes needed here, just labels) */}
+      <div style={{ marginBottom: '20px', width: '80%', maxWidth: '1000px', backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+        <h2 style={{ marginTop: '0', color: '#333' }}>Enter Certificate Details:</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+          <div>
+            <label htmlFor="name" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Recipient Name:</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
+              placeholder="Enter recipient's name"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div>
+            <label htmlFor="courseName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Achievement/Course Text:</label>
+            <input
+              type="text"
+              id="courseName"
+              value={courseName}
+              onChange={(e) => setCourseName(e.target.value)}
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
+              placeholder="e.g., Outstanding Achievement in..."
+            />
+          </div>
+          <div>
+            <label htmlFor="collegeName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Organization/College Name (Left):</label>
+            <input
+              type="text"
+              id="collegeName"
+              value={collegeName}
+              onChange={(e) => setCollegeName(e.target.value)}
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
+              placeholder="e.g., Tech Solutions Inc."
+            />
+          </div>
+          <div>
+            <label htmlFor="eventName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Event/Reason Text (Body):</label>
+            <input
+              type="text"
+              id="eventName"
+              value={eventName}
+              onChange={(e) => setEventName(e.target.value)}
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
+              placeholder="e.g., the Annual Tech Conference"
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Render the CertificateDisplay component */}
+      <div style={{ width: '80%', maxWidth: '1000px' }}>
+        <CertificateDisplay
+          name={name}
+          courseName={courseName}
+          collegeName={collegeName}
+          eventName={eventName}
+        />
+      </div>
     </div>
   );
 }
