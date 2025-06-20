@@ -3,45 +3,58 @@
 'use client'; // This directive makes the component a Client Component in Next.js 13+ App Router
 
 import { useState } from 'react';
-import html2canvas from 'html2canvas'; // Import html2canvas library
-import CertificateDisplay from './component/CertificateDisplay'; // Import your CertificateDisplay component
+import html2canvas from 'html2canvas'; // Keep html2canvas
+import jsPDF from 'jspdf'; // Import jsPDF library
+import CertificateDisplay from './component/CertificateDisplay';
 
 export default function Home() {
-  // State variables for each input field with updated default values for the new certificate image
   const [name, setName] = useState('Jonathon Deo');
-  const [courseName, setCourseName] = useState('Outstanding Achievement in Web Development'); // Example course
-  const [collegeName, setCollegeName] = useState('MY COLLEGE NAME'); // For the "BRAND NAME" on the left
-  const [eventName, setEventName] = useState('the Annual Innovation Summit 2024'); // For the body text
+  const [courseName, setCourseName] = useState('Achievement in Web Development');
+  const [collegeName, setCollegeName] = useState('MY COLLEGE NAME');
+  const [eventName, setEventName] = useState('the Annual Innovation Summit 2024');
 
-  // Function to handle certificate download
+  // Function to handle certificate download as PDF
   const handleDownloadCertificate = async () => {
-    // Get the certificate div by its ID. This ID is set on the main container in CertificateDisplay.tsx
     const certificateBody = document.getElementById('certificate-body');
 
     if (certificateBody) {
       try {
-        // Use html2canvas to capture the content of the certificateBody div
+        // Step 1: Capture the HTML content as a canvas image using html2canvas
         const canvas = await html2canvas(certificateBody, {
-          scale: 3, // Increase scale for higher resolution download (e.g., 2 or 3 is good for print)
-          useCORS: true, // Important if your image is from a different origin (though public dir generally fine)
-          logging: true, // Enable logging in the console for debugging purposes
-          allowTaint: true, // Allows cross-origin images to "taint" the canvas, enabling rendering but disallowing pixel manipulation
-          backgroundColor: '#ffffff', // Explicitly set background color for transparent areas in capture
+          scale: 3, // Higher scale for better quality in PDF
+          useCORS: true,
+          logging: true,
+          allowTaint: true,
+          backgroundColor: '#ffffff',
         });
 
-        // Create a temporary anchor (<a>) element to trigger the download
-        const link = document.createElement('a');
-        link.download = `${name.replace(/\s+/g, '_')}_Certificate.png`; // Set default download file name, replace spaces with underscores
-        link.href = canvas.toDataURL('image/png', 1.0); // Convert canvas content to a PNG data URL (1.0 is highest quality)
+        const imgData = canvas.toDataURL('image/jpeg', 1.0); // Use JPEG for smaller PDF size, adjust quality (0-1)
 
-        // Programmatically click the link to trigger the download
-        document.body.appendChild(link); // Append to body (required for Firefox compatibility)
-        link.click(); // Simulate a click event
-        document.body.removeChild(link); // Remove the link element after the download is triggered
+        // Step 2: Initialize jsPDF
+        // Get dimensions of the canvas
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+
+        // Calculate PDF page dimensions based on the canvas aspect ratio
+        // We want the PDF to fit the image without distortion.
+        // jsPDF's default unit is 'mm'. You can also use 'pt', 'px', 'in', 'cm'.
+        // Let's use 'px' as it's directly related to our canvas dimensions for easier calculation.
+        const pdf = new jsPDF({
+          orientation: imgWidth > imgHeight ? 'l' : 'p', // 'l' for landscape, 'p' for portrait
+          unit: 'px', // Use pixels as unit
+          format: [imgWidth, imgHeight], // Set PDF format to match image dimensions
+        });
+
+        // Add the image to the PDF
+        // pdf.addImage(imageData, format, x, y, width, height)
+        pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+
+        // Step 3: Save the PDF
+        pdf.save(`${name.replace(/\s+/g, '_')}_Certificate.pdf`); // Save as PDF
 
       } catch (error) {
         console.error('Error generating certificate for download:', error);
-        alert('Failed to generate certificate image. Please try again.');
+        alert('Failed to generate certificate PDF. Please try again.');
       }
     } else {
       console.error('Certificate body element not found. Cannot proceed with download.');
@@ -68,7 +81,7 @@ export default function Home() {
               placeholder="Enter recipient's name"
             />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="courseName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Achievement/Course Text:</label>
             <input
               type="text"
@@ -78,7 +91,7 @@ export default function Home() {
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
               placeholder="e.g., Outstanding Achievement in..."
             />
-          </div>
+          </div> */}
           <div>
             <label htmlFor="collegeName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Organization/College Name (Left):</label>
             <input
@@ -108,21 +121,18 @@ export default function Home() {
           style={{
             marginTop: '20px',
             padding: '12px 25px',
-            backgroundColor: '#0070f3', // A standard blue, common in Next.js branding
+            backgroundColor: '#0070f3',
             color: 'white',
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
             fontSize: '16px',
             fontWeight: 'bold',
-            transition: 'background-color 0.3s ease', // Smooth hover effect
+            transition: 'background-color 0.3s ease',
             boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
           }}
-          // Optional: Add hover effect if you're using a proper CSS solution later
-          // onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#005bb5'}
-          // onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#0070f3'}
         >
-          Download Certificate
+          Download Certificate as PDF
         </button>
       </div>
 
