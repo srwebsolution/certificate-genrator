@@ -21,7 +21,6 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
         position: 'relative',
         width: '100%',
         paddingBottom: `${100 / CERT_ASPECT_RATIO}%`,
-        overflow: 'hidden',
         backgroundColor: '#fff',
         border: '1px solid #ccc',
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
@@ -41,7 +40,7 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
       {/* Overlay for College/Organization Name (BRAND NAME on left) */}
       <div style={{
         position: 'absolute',
-        top: "30%",
+        top: "28%",
         left: "22%",
         width: '20%', // Adjusted width
         textAlign: 'left',
@@ -59,8 +58,8 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
       {/* Overlay for Recipient Name (Jonathon Deo) */}
       <div style={{
         position: 'absolute',
-        top: '43%', // Adjusted top for new image
-        right: '1%',
+        top: '40%', // Adjusted top for new image
+        right: '5%',
         transform: 'translateX(-50%)', // Keeps it centered on its 'left' point
         width: '40%', // Adjusted width for name area
         textAlign: 'right',
@@ -76,14 +75,14 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
       {/* Overlay for "Appreciation for [Course/Achievement]" - this will be dynamic for Course Name */}
       <div style={{
         position: 'absolute',
-        top: '30.5%', // Positioned near "OF APPRECIATION"
-        right: '1%',
+        top: '29.5%', // Positioned near "OF APPRECIATION"
+        right: '1.8%',
         transform: 'translateX(-50%)',
         width: '50%',
         paddingRight:"5px",
         textAlign: 'right',
         color: '#333', // Dark gray
-        fontSize: '100%',
+        fontSize: '0.9rem',
         fontWeight: 'normal', // Original seems lighter
         fontFamily: 'Arial, sans-serif',
         zIndex: 10,
@@ -96,7 +95,7 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
       <div style={{
         position: 'absolute',
         top: '55%', // Adjusted top
-        left: '64%', // Adjusted left
+        left: '60%', // Adjusted left
         paddingRight:"80px",
         transform: 'translateX(-50%)',
         width: '50%', // Adjusted width to fit the text block
