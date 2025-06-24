@@ -9,8 +9,8 @@ import CertificateDisplay from './component/CertificateDisplay';
 
 export default function Home() {
   const [name, setName] = useState('Jonathon Deo');
-  const [courseName, setCourseName] = useState('Achievement in Web Development');
-  const [collegeName, setCollegeName] = useState('MY COLLEGE NAME');
+  const [courseName, setCourseName] = useState('1st Rank in ');
+  const [collegeName, setCollegeName] = useState('the Annual Tech Conference');
   const [eventName, setEventName] = useState('the Annual Innovation Summit 2024');
 
   // Function to handle certificate download as PDF
@@ -71,39 +71,39 @@ export default function Home() {
         <h2 style={{ marginTop: '0', color: '#333' }}>Enter Certificate Details:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
           <div>
-            <label htmlFor="name" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Recipient Name:</label>
+            <label htmlFor="name" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Student Name:</label>
             <input
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
-              placeholder="Enter recipient's name"
+              placeholder="Enter Student's name"
             />
           </div>
-          {/* <div>
-            <label htmlFor="courseName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Achievement/Course Text:</label>
+          <div>
+            <label htmlFor="courseName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Rank in Text:</label>
             <input
               type="text"
               id="courseName"
               value={courseName}
               onChange={(e) => setCourseName(e.target.value)}
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
-              placeholder="e.g., Outstanding Achievement in..."
+              placeholder="e.g., OF 1  runner-up..."
             />
-          </div> */}
+          </div>
           <div>
-            <label htmlFor="collegeName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Organization/College Name (Left):</label>
+            <label htmlFor="collegeName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Event Name (Left):</label>
             <input
               type="text"
               id="collegeName"
               value={collegeName}
               onChange={(e) => setCollegeName(e.target.value)}
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
-              placeholder="e.g., Tech Solutions Inc."
+              placeholder="e.g., the Annual Tech Conference."
             />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="eventName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Event/Reason Text (Body):</label>
             <input
               type="text"
@@ -113,7 +113,7 @@ export default function Home() {
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
               placeholder="e.g., the Annual Tech Conference"
             />
-          </div>
+          </div> */}
         </div>
         {/* Download Button */}
         <button

@@ -12,7 +12,7 @@
   .overlayCollegeName {
     position: absolute;
     top: 38%;
-    right: 15%;
+    right: 20.5%;
     width: 50%;
     text-align: center;
     padding-right: 88px; /* This padding will be fixed pixels, not responsive. Consider if this is desired. */
@@ -27,12 +27,12 @@
   .overlayRecipientName {
     position: absolute;
     top: 41%;
-    right: 4%;
+    right: 10%;
     transform: translateX(-50%); /* This transform makes it centered based on its right edge */
     width: 40%;
     text-align: center; /* Text aligns to the right edge of its 40% width container */
-    color: #FFD700;
-    font-size: 2.2rem; /* Relative to root font size */
+    color: #23345e;
+    font-size: 3rem; /* Relative to root font size */
     font-weight: bold;
     font-family: 'Georgia', serif; /* Ensure this font is loaded */
     z-index: 10;
@@ -44,34 +44,50 @@
   }
   /* Overlay for "Appreciation for [Course/Achievement]" */
   .overlayCourseName {
-    position: absolute;
-    top: 29.5%;
-    right: 1.8%;
+        position: absolute;
+    top: 27.5%;
+    right: 0.8%;
     transform: translateX(-50%);
-    width: 50%;
-    padding-right: 5px; /* This padding will be fixed pixels, not responsive. */
-    text-align: right;
+    width: 49%;
+    padding-right: 5px;
+    text-align: center;
     color: #333;
-    font-size: 0.9rem; /* Relative to root font size */
+    font-size: 1.5rem;
     font-weight: normal;
     font-family: 'Arial', sans-serif;
     z-index: 10;
-  }
-  
+}
+
+.overlayCourseName2 {
+    position: absolute;
+    top: 32%;
+    right: 0.8%;
+    transform: translateX(-50%);
+    width: 49%;
+    padding-right: 5px;
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: 'Arial', sans-serif;
+    z-index: 10;
+}
+
   /* Overlay for Event/Reason (main body text) */
   .overlayEventReason {
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    padding-right: 80px; /* This padding will be fixed pixels, not responsive. */
+        position: absolute;
+    top: 46%;
+    left: 55%;
+    padding-right: 80px;
     transform: translateX(-50%);
-    width: 50%;
+    width: 100%;
     text-align: center;
     color: #555;
-    font-size: 0.8rem; /* Relative to root font size */
+    font-size: 1.5rem;
     font-family: 'Arial', sans-serif;
     line-height: 1.4;
     z-index: 10;
+
   }
   
   /* Overlay for Signature Names - Left */

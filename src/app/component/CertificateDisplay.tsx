@@ -39,7 +39,7 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
 
       {/* Overlay for College/Organization Name (BRAND NAME on left) */}
       <div className={styles.overlayCollegeName}>
-        Proudly Presented to
+        This certificate is proudly presented to
       </div>
 
       {/* Overlay for Recipient Name (Jonathon Deo) */}
@@ -48,24 +48,21 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
       </div>
 
       {/* Overlay for "Appreciation for [Course/Achievement]" */}
-      {/* <div className={styles.overlayCourseName}>
+      <div className={styles.overlayCourseName}>
         {courseName}
-      </div> */}
+      </div>
+      <div className={styles.overlayCourseName2}>
+        <span style={{ fontWeight: 'bold' }}>From {collegeName}</span>
+      </div>
+
 
       {/* Overlay for Event/Reason (part of the main body text) */}
       <div className={styles.overlayEventReason}>
-        <span style={{ fontWeight: 'bold' }}>From {collegeName}</span>
         <br />
-        <span style={{ fontWeight: 'bold' }}>for participate in the event 
-          <br /><span className={styles.goldColor}>
-            {eventName}
-            </span>
-            </span>
-        <br />
-      at Techno-Managerial Fest MINDBEND 2024 during 15th March 2024 - 17th March 2024 organized by Sardar Vallabhbhai National Institute of Technology, Surat.
+      representing Team IoTrons participated with distinction in MINDBEND 2025, Gujarat’s largest and most prestigious techno-managerial festival, held at Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat. Their presence and contribution greatly enriched the spirit of innovation, excellence, and global collaboration that define this grand event.
       </div>
 
 
     </div>
-  );
+  );  
 }
