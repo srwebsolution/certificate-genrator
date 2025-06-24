@@ -26,18 +26,17 @@
   /* Overlay for Recipient Name (Jonathon Deo) */
   .overlayRecipientName {
     position: absolute;
-    top: 41%;
-    right: 10%;
+    top: 40%;
+    right: -6%;
     transform: translateX(-50%); /* This transform makes it centered based on its right edge */
-    width: 40%;
+    width: 55%;
     text-align: center; /* Text aligns to the right edge of its 40% width container */
     color: #23345e;
     font-size: 3rem; /* Relative to root font size */
-    font-weight: bold;
-    font-family: 'Georgia', serif; /* Ensure this font is loaded */
+    font-family: var(--font-poppins); /* Ensure this font is loaded */
     z-index: 10;
   }
-  
+
   .goldColor{
     color: #FFD700;
     font-size: 1rem;
@@ -60,16 +59,16 @@
 
 .overlayCourseName2 {
     position: absolute;
-    top: 32%;
-    right: 0.8%;
+    top: 27%;
+    right: 0%;
     transform: translateX(-50%);
-    width: 49%;
+    width: 50%;
     padding-right: 5px;
     text-align: center;
     color: #333;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: normal;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-lora);
     z-index: 10;
 }
 

@@ -81,7 +81,7 @@ export default function Home() {
               placeholder="Enter Student's name"
             />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="courseName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Rank in Text:</label>
             <input
               type="text"
@@ -91,7 +91,7 @@ export default function Home() {
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
               placeholder="e.g., OF 1  runner-up..."
             />
-          </div>
+          </div> */}
           <div>
             <label htmlFor="collegeName" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#333' }}>Event Name (Left):</label>
             <input

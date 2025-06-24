@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Lora } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  weight: ['400', '700'], // Specify the weights you need
+  subsets: ['latin'],    // Specify subsets to reduce file size
+  variable: '--font-poppins', // Define a CSS variable for Poppins
+});
+
+const lora = Lora({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-lora', // Define a CSS variable for Lora
 });
 
 const geistMono = Geist_Mono({
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${lora.variable} antialiased`}
       >
         {children}
       </body>
