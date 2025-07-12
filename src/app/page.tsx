@@ -78,7 +78,7 @@ export default function Home() {
 
       setParticipants(jsonData as any[]); // This schedules the update
       // console.log(participants); // This will still show the old state, as explained above.
-                                 // It's safe to remove this specific log line if it's confusing.
+      // It's safe to remove this specific log line if it's confusing.
 
     } catch (error) {
       console.error('Error parsing Excel file:', error);
@@ -232,6 +232,7 @@ export default function Home() {
               id="excelFileInput"
               accept=".xlsx, .xls"
               onChange={handleExcelUpload}
+              className='cursor-pointer'
               style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: '#333' }}
               disabled={loading}
             />
@@ -251,8 +252,8 @@ export default function Home() {
         </div>
         {/* Show a preview of parsed participants */}
         {participants.length > 0 && (
-          <div style={{ marginTop: '20px', background: '#f9f9f9', padding: '10px', borderRadius: '6px' }}>
-            <strong>Parsed Participants:</strong>
+          <div className='text-black' style={{ marginTop: '20px', background: '#f9f9f9', padding: '10px', borderRadius: '6px' }}>
+            <strong>Participants Name:</strong>
             <ul style={{ maxHeight: '120px', overflowY: 'auto', margin: 0, paddingLeft: '20px' }}>
               {participants.slice(0, 5).map((row, idx) => (
                 // Try different common column names for the participant's name
@@ -285,8 +286,8 @@ export default function Home() {
           {loading
             ? message
             : zipDownloaded
-            ? 'ZIP Already Downloaded'
-            : `Generate All ${participants.length > 0 ? participants.length : ''} Certificates as ZIP`}
+              ? 'ZIP Already Downloaded'
+              : `Generate All ${participants.length > 0 ? participants.length : ''} Certificates as ZIP`}
         </button>
         {message && <p style={{ marginTop: '10px', color: loading ? '#0070f3' : '#333' }}>{message}</p>}
       </div>

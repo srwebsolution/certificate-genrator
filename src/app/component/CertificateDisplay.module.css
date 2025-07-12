@@ -1,199 +1,225 @@
 .certificateBody {
-    position: relative;
-    width: 100%;
-    /* padding-bottom will be set inline in the JS for dynamic aspect ratio */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden; /* Added overflow hidden as it was in your previous inline style */
-  }
-  
-  /* Overlay for College/Organization Name (BRAND NAME on left) */
-  .overlayCollegeName {
-    position: absolute;
-    top: 38%;
-    right: 20.5%;
-    width: 50%;
-    text-align: center;
-    padding-right: 88px; /* This padding will be fixed pixels, not responsive. Consider if this is desired. */
-    color: #333;
-    font-size: 1rem; /* Relative to root font size */
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
-  }
-  
-  /* Overlay for Recipient Name (Jonathon Deo) */
-  .overlayRecipientName {
-    position: absolute;
-    top: 40%;
-    right: -6%;
-    transform: translateX(-50%); /* This transform makes it centered based on its right edge */
-    width: 55%;
-    text-align: center; /* Text aligns to the right edge of its 40% width container */
-    color: #23345e;
-    font-size: 3rem; /* Relative to root font size */
-    font-family: var(--font-poppins); /* Ensure this font is loaded */
-    z-index: 10;
-  }
+  position: relative;
+  width: 100%;
+  /* padding-bottom will be set inline in the JS for dynamic aspect ratio */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Added overflow hidden as it was in your previous inline style */
+}
 
-  .goldColor{
-    color: #FFD700;
-    font-size: 1rem;
-  }
-  /* Overlay for "Appreciation for [Course/Achievement]" */
-  .overlayCourseName {
-        position: absolute;
-    top: 27.5%;
-    right: 0.8%;
-    transform: translateX(-50%);
-    width: 49%;
-    padding-right: 5px;
-    text-align: center;
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: normal;
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
+/* Overlay for College/Organization Name (BRAND NAME on left) */
+.overlayCollegeName {
+  position: absolute;
+  top: 38%;
+  right: 20.5%;
+  width: 50%;
+  text-align: center;
+  padding-right: 88px;
+  /* This padding will be fixed pixels, not responsive. Consider if this is desired. */
+  color: #333;
+  font-size: 1rem;
+  /* Relative to root font size */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+}
+
+/* Overlay for Recipient Name (Jonathon Deo) */
+.overlayRecipientName {
+  position: absolute;
+  top: 39%;
+  right: -31%;
+  transform: translateX(-50%);
+  /* This transform makes it centered based on its right edge */
+  width: 80%;
+  text-align: center;
+  /* Text aligns to the right edge of its 40% width container */
+  color: #23345e;
+  font-size: 3rem;
+  /* Relative to root font size */
+  font-family: var(--font-poppins);
+  /* Ensure this font is loaded */
+  z-index: 10;
+}
+
+.goldColor {
+  color: #FFD700;
+  font-size: 1rem;
+}
+
+/* Overlay for "Appreciation for [Course/Achievement]" */
+.overlayCourseName {
+  position: absolute;
+  top: 27.5%;
+  right: 0.8%;
+  transform: translateX(-50%);
+  width: 49%;
+  padding-right: 5px;
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
 }
 
 .overlayCourseName2 {
-    position: absolute;
-    top: 27%;
-    right: -11%;
-    transform: translateX(-50%);
-    width: 60%;
-    /* padding-right: 5px; */
-    text-align: center;
-    color: #333;
-    font-size: 2rem;
-    font-weight: normal;
-    font-family: var(--font-lora);
-    z-index: 10;
+  position: absolute;
+  top: 27%;
+  right: -11%;
+  transform: translateX(-50%);
+  width: 60%;
+  /* padding-right: 5px; */
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  font-weight: normal;
+  font-family: var(--font-lora);
+  z-index: 10;
 }
 
-  /* Overlay for Event/Reason (main body text) */
-  .overlayEventReason {
-        position: absolute;
-    top: 46%;
-    left: 55%;
-    padding-right: 80px;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    color: #555;
-    font-size: 1.5rem;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.4;
-    z-index: 10;
+/* Overlay for Event/Reason (main body text) */
+.overlayEventReason {
+  position: absolute;
+  top: 50.5%;
+  left: 50%;
 
-  }
-  
-  /* Overlay for Signature Names - Left */
-  .overlaySignatureLeftName {
-    position: absolute;
-    top: 71%;
-    left: 46%;
-    transform: translateX(-50%);
-    width: 18%;
-    text-align: center;
-    color: #333;
-    font-size: 0.8rem; /* Relative to root font size */
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
-  }
-  
-  .overlaySignatureLeftTitle {
-    position: absolute;
-    top: 73%;
-    left: 46%;
-    transform: translateX(-50%);
-    width: 18%;
-    text-align: center;
-    color: #555;
-    font-size: 0.7rem; /* Relative to root font size */
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
-  }
-  
-  /* Overlay for Signature Names - Right */
-  /* Note: For elements that are very similar, you can reuse classes and override specific properties inline or with another class. */
-  /* Here, I'm making separate classes for clarity if mobile overrides differ significantly for left/right */
-  .overlaySignatureRightName {
-    position: absolute;
-    top: 71%;
-    left: 69%; /* Specific left value for right signature */
-    transform: translateX(-50%);
-    width: 18%;
-    text-align: center;
-    color: #333;
-    font-size: 0.8rem; /* Relative to root font size */
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
-  }
-  
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  color: #555;
+  font-size: 1.4rem;
+  font-family: var(--font-lora);
+  line-height: 1.4;
+  z-index: 10;
+
+}
+
+/* Overlay for Signature Names - Left */
+.overlaySignatureLeftName {
+  position: absolute;
+  top: 71%;
+  left: 46%;
+  transform: translateX(-50%);
+  width: 18%;
+  text-align: center;
+  color: #333;
+  font-size: 0.8rem;
+  /* Relative to root font size */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+}
+
+.overlaySignatureLeftTitle {
+  position: absolute;
+  top: 73%;
+  left: 46%;
+  transform: translateX(-50%);
+  width: 18%;
+  text-align: center;
+  color: #555;
+  font-size: 0.7rem;
+  /* Relative to root font size */
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+}
+
+/* Overlay for Signature Names - Right */
+/* Note: For elements that are very similar, you can reuse classes and override specific properties inline or with another class. */
+/* Here, I'm making separate classes for clarity if mobile overrides differ significantly for left/right */
+.overlaySignatureRightName {
+  position: absolute;
+  top: 71%;
+  left: 69%;
+  /* Specific left value for right signature */
+  transform: translateX(-50%);
+  width: 18%;
+  text-align: center;
+  color: #333;
+  font-size: 0.8rem;
+  /* Relative to root font size */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+}
+
 .overlaySignatureRightTitle {
-    position: absolute;
-    top: 73%;
-    left: 69%; /* Specific left value for right signature */
-    transform: translateX(-50%);
-    width: 18%;
-    text-align: center;
-    color: #555;
-    font-size: 0.7rem; /* Relative to root font size */
-    font-family: 'Arial', sans-serif;
-    z-index: 10;
+  position: absolute;
+  top: 73%;
+  left: 69%;
+  /* Specific left value for right signature */
+  transform: translateX(-50%);
+  width: 18%;
+  text-align: center;
+  color: #555;
+  font-size: 0.7rem;
+  /* Relative to root font size */
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
 }
 
 @media (max-width: 1168px) {
-    .overlayCollegeName {
-      font-size: 1.0%; /* Further decrease font size for smaller screens */
-      top: 29%; /* Adjust top if needed for alignment */
-      left: 20%;
-    }
-  
-    .overlayRecipientName {
-      font-size: 2.5%; /* Further decrease font size for smaller screens */
-      top: 42%; /* Adjust top if needed for alignment */
-    }
-  
-    .overlayCourseName {
-      font-size: 0.8%; /* Further decrease font size for smaller screens */
-      top: 30%;
-    }
-  
-    .overlayEventReason {
-      font-size: 0.7%; /* Further decrease font size for smaller screens */
-      top: 56%; /* Adjust top if needed for alignment, especially if cutting occurs */
-      padding-right: 60px; /* Reduce fixed padding if it's causing issues */
-    }
-  
-    .overlaySignatureLeftName {
-      font-size: 0.8%;
-      top: 72%;
-    }
-    .overlaySignatureLeftTitle {
-      font-size: 0.7%;
-      top: 74%;
-    }
-  
-    .overlaySignatureRightName {
-      font-size: 0.8%;
-      top: 72%;
-    }
-    .overlaySignatureRightTitle {
-      font-size: 0.7%;
-      top: 74%;
-    }
-    /* You might need to adjust 'left' and 'width' percentages here too if the layout drastically changes */
+  .overlayCollegeName {
+    font-size: 1.0%;
+    /* Further decrease font size for smaller screens */
+    top: 29%;
+    /* Adjust top if needed for alignment */
+    left: 20%;
+  }
+
+  .overlayRecipientName {
+    font-size: 2.5%;
+    /* Further decrease font size for smaller screens */
+    top: 42%;
+    /* Adjust top if needed for alignment */
+  }
+
+  .overlayCourseName {
+    font-size: 0.8%;
+    /* Further decrease font size for smaller screens */
+    top: 30%;
+  }
+
+  .overlayEventReason {
+    font-size: 0.7%;
+    /* Further decrease font size for smaller screens */
+    top: 56%;
+    /* Adjust top if needed for alignment, especially if cutting occurs */
+    padding-right: 60px;
+    /* Reduce fixed padding if it's causing issues */
+  }
+
+  .overlaySignatureLeftName {
+    font-size: 0.8%;
+    top: 72%;
+  }
+
+  .overlaySignatureLeftTitle {
+    font-size: 0.7%;
+    top: 74%;
+  }
+
+  .overlaySignatureRightName {
+    font-size: 0.8%;
+    top: 72%;
+  }
+
+  .overlaySignatureRightTitle {
+    font-size: 0.7%;
+    top: 74%;
+  }
+
+  /* You might need to adjust 'left' and 'width' percentages here too if the layout drastically changes */
 }
 
 @media (max-width: 400px) {
   .overlayRecipientName {
     font-size: 2.2%;
   }
+
   .overlayEventReason {
     font-size: 0.6%;
     line-height: 1.3;

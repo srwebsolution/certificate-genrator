@@ -36,13 +36,16 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
 
       {/* Overlay for Recipient Name (Jonathon Deo) */}
       <div className={styles.overlayRecipientName}>
-        {name}
+        {name.split(" ")[0]} {name.split(" ")[1] ? name.split(" ")[1] : ""}
       </div>
 
-      
       <div className={styles.overlayCourseName2}>
         <span style={{ fontWeight: 'bold' }}>{eventName}</span>
       </div>
+
+      {/* <div className={styles.overlayEventReason}>
+        for participating with distinction in <p className='font-bold'> MINDBEND 2025, Gujarat’s largest techno-managerial festival, held at Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat. </p> <p className='flex'>{name.split(" ")[0]}&apos;s presence and contributions greatly enriched the spirit of innovation, excellence, and global collaboration that define this grand event.</p>
+      </div> */}
       </div> 
   );
 }
