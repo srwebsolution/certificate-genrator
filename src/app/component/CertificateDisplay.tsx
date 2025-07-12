@@ -25,7 +25,7 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
     >
       {/* Base Certificate Image */}
       <Image
-        src="/certificate.png" // Confirm this matches your actual file extension (png or jpg)
+        src="/certificate_svnit.png" // Confirm this matches your actual file extension (png or jpg)
         alt="Certificate of Appreciation"
         layout="fill"
         objectFit="cover"
@@ -36,7 +36,7 @@ export default function CertificateDisplay({ name, courseName, collegeName, even
 
       {/* Overlay for Recipient Name (Jonathon Deo) */}
       <div className={styles.overlayRecipientName}>
-        {name.split(" ")[0]} {name.split(" ")[1] ? name.split(" ")[1] : ""}
+        {name.trim().split(" ")[0]} {name.trim().split(" ")[1] ? name.trim().split(" ")[1] : ""}
       </div>
 
       <div className={styles.overlayCourseName2}>

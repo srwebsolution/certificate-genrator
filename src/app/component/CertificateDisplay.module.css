@@ -68,9 +68,9 @@
 .overlayCourseName2 {
   position: absolute;
   top: 27%;
-  right: -11%;
+  left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: 70%;
   /* padding-right: 5px; */
   text-align: center;
   color: #333;
